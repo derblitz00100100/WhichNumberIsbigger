@@ -10,6 +10,7 @@ public class BiggerNumberGame {
     public BiggerNumberGame(int lowerLimit, int upperLimit) {
         this.lowerLimit = lowerLimit;
         this.upperLimit = upperLimit;
+        generateRandomNumbers();
     }
 
     public void generateRandomNumbers() {
@@ -31,11 +32,11 @@ public class BiggerNumberGame {
         // update the score accordingly
         // return a relevant message
         if (answer == Math.max(number1, number2)) {
+            score++;
             return "You are indeed correct";
         }
-        else {
-            return "You are indeed incorrect";
-        }
+        score--;
+        return "You are indeed incorrect";
     }
 
     public int getNumber1() {
